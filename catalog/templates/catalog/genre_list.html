@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+  <h3>Genre List</h3>
+
+{% if genre_list %}
+  <ul>
+    {% for genre in genre_list %}
+      <li>
+        <h5>{{ genre.name }}</h5>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no genre registered.</p>
+  {% endif %}
+
+<a href="/catalog/book/create/genrecreate/">Voltar</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+
+{% if author.get_absolute_url == null %}
+<li><a href="/catalog/authors">Voltar</a></li>
+
+{% else %}
+<li><a href="{{ author.get_absolute_url }}">Voltar</a></li>
+
+{% endif %}
+
+{% endblock %}

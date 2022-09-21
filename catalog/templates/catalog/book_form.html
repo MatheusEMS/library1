@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <li><a href="/catalog/book/create/genrecreate/">Cadastrar Genre</a></li>
+    <input type="submit" value="Submit">
+
+    {% if book.get_absolute_url == null %}
+    <li><a href="/catalog/books">Voltar</a></li>
+
+    {% else %}
+    <li><a href="{{ book.get_absolute_url }}">Cancelar</a></li>
+    {% endif %}
+</form>
+{% endblock %}

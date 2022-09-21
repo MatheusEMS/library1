@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+
+</form>
+
+<li><a href="/catalog/book/create/">Voltar</a></li>
+<li><a href="/catalog/book/create/genrecreate/list/">Genre list</a></li>
+
+{% endblock %}
